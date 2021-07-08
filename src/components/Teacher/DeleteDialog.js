@@ -24,7 +24,7 @@ export default function DeleteDialog({ open, setOpen, nodeObj, setNodes }) {
       fetch(" http://localhost:8000/classes")
         .then((res) => res.json())
         .then((data) => setNodes(data));
-        setOpen(false);
+      setOpen(false);
     });
   };
   return (
@@ -50,9 +50,7 @@ export default function DeleteDialog({ open, setOpen, nodeObj, setNodes }) {
           <Button onClick={handleClose} color="secondary">
             Disagree
           </Button>
-          <Button onClick={handleDelete} color="secondary">
-            Agree
-          </Button>
+          <Button onClick={handleDelete}>Agree</Button>
         </DialogActions>
       </Dialog>
     </div>

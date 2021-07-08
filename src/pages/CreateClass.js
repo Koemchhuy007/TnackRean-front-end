@@ -40,10 +40,10 @@ export default function Create() {
     if (subject == "") {
       setSubjectsError(true);
     }
-    if(duration == ""){
+    if (duration == "") {
       setDurationError(true);
     }
-    if(teacherInform == ""){
+    if (teacherInform == "") {
       setTeacherInformError(true);
     }
     if (classname && subject && duration && teacherInform) {
@@ -51,7 +51,7 @@ export default function Create() {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ classname, subject, duration, teacherInform }),
-      }).then(() => history.push("/"));
+      }).then(() => history.push("/teacherpage/teacher"));
     }
   };
 

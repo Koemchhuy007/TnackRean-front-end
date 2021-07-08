@@ -28,14 +28,14 @@ const useStyles = makeStyles({
 });
 const options = [
   { id: 1, text: "Edit", icon: <EditIcon /> },
-  { id: 1, text: "Delete", icon: <DeleteOutlined /> },
+  { id: 2, text: "Delete", icon: <DeleteOutlined /> },
 ];
 const ITEM_HEIGHT = 48;
-export default function NodeClass({ node,setNodes}) {
+export default function TeacherNodeClass({ node, setNodes }) {
   const classes = useStyles(node);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const [nodeObj ,setNodeObj]= useState({});
+  const [nodeObj, setNodeObj] = useState({});
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -109,11 +109,11 @@ export default function NodeClass({ node,setNodes}) {
           </MenuItem>
         ))}
       </Menu>
-      <EditDialog 
-      open={openEditDialog} 
-      setOpen={setOpenEditDialog} 
-      nodeObj={nodeObj}
-      setNodes={setNodes}
+      <EditDialog
+        open={openEditDialog}
+        setOpen={setOpenEditDialog}
+        nodeObj={nodeObj}
+        setNodes={setNodes}
       />
       <DeleteDialog
         open={openDeleteDialog}
