@@ -1,40 +1,67 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Notes from './pages/Nodes'
-import CreateClass from './pages/CreateClass'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core'
-import { purple } from '@material-ui/core/colors'
-import Layout from './components/Teacher/TeacherLayout'
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Notes from "./pages/Nodes";
+import TeacherNodeClass from "./components/Teacher/TeacherNodeClass";
+import CreateClass from "./pages/CreateClass";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import { purple } from "@material-ui/core/colors";
+import Layout from "./components/Teacher/TeacherLayout";
+import StudentLayout from "./components/student/Layout";
+import Studentnode from "./components/student/Studentnode";
+import Calender from "./components/student/Calender";
+import Login from "./components/Login/Login";
+import InclassLayout from "./components/Inclass/InclassLayout";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#fefefe'
+      main: "#fefefe",
     },
-    secondary: purple
+    secondary: purple,
   },
   typography: {
-    fontFamily: 'Quicksand',
+    fontFamily: "Quicksand",
     fontWeightLight: 400,
     fontWeightRegular: 500,
     fontWeightMedium: 600,
     fontWeightBold: 700,
-  }
-})
+  },
+});
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Layout>
-          <Switch>
-            <Route exact path="/">
-              <Notes />
-            </Route>
-            <Route path="/create">
-              <CreateClass />
-            </Route>
-          </Switch>
-        </Layout>
+        <Switch>
+          <Route exact path="/">
+            <Login />
+          </Route>
+        </Switch>
+
+        <Route path="/teacherpage">
+          <Layout>
+            <Switch>
+              <Route path="/teacherpage/teacher">
+                <Notes />
+              </Route>
+              <Route path="/teacherpage/create">
+                <CreateClass />
+              </Route>
+            </Switch>
+          </Layout>
+        </Route>
+
+        <Route path="/student">
+          <StudentLayout>
+            <Switch>
+              <Route path="/student/myclass">
+                <Studentnode />
+              </Route>
+
+              <Route path="/student/calender">
+                <Calender />
+              </Route>
+            </Switch>
+          </StudentLayout>
+        </Route>
       </Router>
     </ThemeProvider>
   );

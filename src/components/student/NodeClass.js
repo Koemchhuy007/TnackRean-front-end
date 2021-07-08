@@ -12,8 +12,8 @@ import EditIcon from "@material-ui/icons/Edit";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import EditDialog from "./EditDialog";
-import DeleteDialog from "./DeleteDialog";
+import EditDialog from "../Teacher/EditDialog";
+import DeleteDialog from "../Teacher/DeleteDialog";
 var randomArrayColor = [yellow[700], green[500], pink[500], blue[500]];
 const random_color = (items) => {
   return items[Math.floor(Math.random() * items.length)];
@@ -31,31 +31,18 @@ const options = [
   { id: 1, text: "Delete", icon: <DeleteOutlined /> },
 ];
 const ITEM_HEIGHT = 48;
-export default function NodeClass({ node,setNodes}) {
+export default function NodeClass({ node, setNodes }) {
   const classes = useStyles(node);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const [nodeObj ,setNodeObj]= useState({});
-
+  const [nodeObj, setNodeObj] = useState({});
+  const [opens, setOpen] = React.useState(false);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-  };
-  const [openEditDialog, setOpenEditDialog] = React.useState(false);
-  const [openDeleteDialog, setOpenDeleteDialog] = React.useState(false);
-  const handleClickOpen = (option, obj) => {
-    if (option == "Edit") {
-      setOpenEditDialog(true);
-      setAnchorEl(null);
-      setNodeObj(obj);
-    } else {
-      setOpenDeleteDialog(true);
-      setAnchorEl(null);
-      setNodeObj(obj);
-    }
   };
   return (
     <div>
@@ -72,9 +59,7 @@ export default function NodeClass({ node,setNodes}) {
               aria-controls="long-menu"
               aria-haspopup="true"
               onClick={handleClick}
-            >
-              <MoreVertIcon />
-            </IconButton>
+            ></IconButton>
           }
           title={node.classname}
           subheader={`${node.subject} | ${node.duration}`}
@@ -97,30 +82,7 @@ export default function NodeClass({ node,setNodes}) {
             width: "20ch",
           },
         }}
-      >
-        {options.map((option) => (
-          <MenuItem
-            key={option.id}
-            // selected={option === "Pyxis"}
-            onClick={() => handleClickOpen(option.text, node)}
-          >
-            <IconButton>{option.icon}</IconButton>
-            {option.text}
-          </MenuItem>
-        ))}
-      </Menu>
-      <EditDialog 
-      open={openEditDialog} 
-      setOpen={setOpenEditDialog} 
-      nodeObj={nodeObj}
-      setNodes={setNodes}
-      />
-      <DeleteDialog
-        open={openDeleteDialog}
-        setOpen={setOpenDeleteDialog}
-        nodeObj={nodeObj}
-        setNodes={setNodes}
-      />
+      ></Menu>
     </div>
   );
 }

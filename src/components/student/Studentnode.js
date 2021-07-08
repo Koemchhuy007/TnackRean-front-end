@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Masonry from "react-masonry-css";
-import TeacherNodeClass from "../components/Teacher/TeacherNodeClass";
+import NodeClass from "./NodeClass";
 
-export default function Nodes() {
+export default function Studentnode() {
   const [nodes, setNodes] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Nodes() {
       >
         {nodes.map((node) => (
           <div key={node.id}>
-            <TeacherNodeClass node={node} setNodes={setNodes} />
+            <NodeClass node={node} setNodes={setNodes} />
           </div>
         ))}
       </Masonry>
