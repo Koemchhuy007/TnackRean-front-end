@@ -25,7 +25,7 @@ export default function Nodes() {
         columnClassName="my-masonry-grid_column"
       >
         {nodes.map((node) => (
-          <div key={node.id} onClick={() => history.push("/class-doc")}>
+          <div key={node.id} onClick={() => history.push("/class-doc/"+node.id)}>
             <TeacherNodeClass node={node} setNodes={setNodes} />
           </div>
         ))}

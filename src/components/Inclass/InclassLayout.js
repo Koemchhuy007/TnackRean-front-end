@@ -76,7 +76,7 @@ export default function StudentLayout({ children }) {
       path: "",
     },
   ];
-
+  
   return (
     <div className={classes.root}>
       {/* app bar */}

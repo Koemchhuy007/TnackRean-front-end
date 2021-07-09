@@ -15,6 +15,7 @@ import EditeFolderDialoge from "./components/Inclass/Folder/EditeFolderDialoge";
 import ViewFolderDialoge from "./components/Inclass/Folder/ViewFolderDialoge";
 import FolderDialoge from "./components/Inclass/Folder/FolderDialoge";
 import { Folder } from "@material-ui/icons";
+import Register from "./components/Login/Register";
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -39,9 +40,12 @@ function App() {
           <Route exact path="/">
             <Login/>
           </Route>
+          <Route path="/register">
+            <Register/>
+          </Route>
         </Switch>
 
-        <Route path="/teacherpage">
+        <Route path="/teacherpage/:id">
           <Layout>
             <Switch>
               <Route path="/teacherpage/teacher">
@@ -54,7 +58,7 @@ function App() {
           </Layout>
         </Route>
 
-        <Route path="/student">
+        <Route path="/student/:id">
           <StudentLayout>
             <Switch>
               <Route path="/student/myclass">
@@ -68,7 +72,7 @@ function App() {
           </StudentLayout>
         </Route>
 
-        <Route path="/class-doc">
+        <Route path="/class-doc/:id">
           <InclassLayout>
             <Switch>
               <Route path="/class-doc/deletefolderdialog">
@@ -83,7 +87,6 @@ function App() {
             </Switch>
           </InclassLayout>
         </Route>
-
       </Router>
     </ThemeProvider>
   );
