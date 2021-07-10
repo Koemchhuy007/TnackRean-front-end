@@ -14,6 +14,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import EditDialog from "./EditDialog";
 import DeleteDialog from "./DeleteDialog";
+import { useHistory } from "react-router";
 var randomArrayColor = [yellow[700], green[500], pink[500], blue[500]];
 const random_color = (items) => {
   return items[Math.floor(Math.random() * items.length)];
@@ -32,6 +33,7 @@ const options = [
 ];
 const ITEM_HEIGHT = 48;
 export default function TeacherNodeClass({ node, setNodes }) {
+  const history = useHistory()
   const classes = useStyles(node);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -57,6 +59,7 @@ export default function TeacherNodeClass({ node, setNodes }) {
       setNodeObj(obj);
     }
   };
+  console.log(node);
   return (
     <div>
       <Card elevation={1}>
@@ -79,7 +82,7 @@ export default function TeacherNodeClass({ node, setNodes }) {
           title={node.classname}
           subheader={`${node.subject} | ${node.duration}`}
         />
-        <CardContent>
+        <CardContent onClick={() => history.push("/class-doc/" + node.id)}>
           <Typography variant="body2" color="textSecondary">
             {node.teacherInform}
           </Typography>

@@ -4,15 +4,15 @@ import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox"; 
-import { Link, NavLink, Redirect, withRouter } from 'react-router-dom'
+import Checkbox from "@material-ui/core/Checkbox";
+import { Link} from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useHistory } from "react-router";
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
@@ -43,7 +43,7 @@ export default function Login({ props }) {
 
   const [passWordError, setpassWordError] = useState(false);
   const history = useHistory();
-  const [teacherData, setTeacherData]= useState([]);
+  const [teacherData, setTeacherData] = useState([]);
   const [studentData, setStudentData] = useState([]);
 
   useEffect(() => {
@@ -51,9 +51,9 @@ export default function Login({ props }) {
       .then((res) => res.json())
       .then((data) => setTeacherData(data));
 
-      fetch(" http://localhost:8000/students")
-        .then((res) => res.json())
-        .then((data)=> setStudentData(data));
+    fetch(" http://localhost:8000/students")
+      .then((res) => res.json())
+      .then((data) => setStudentData(data));
   }, []);
 
   const handleSubmit = (e) => {
@@ -72,25 +72,19 @@ export default function Login({ props }) {
     if (email && password) {
       // eslint-disable-next-line no-lone-blocks
       {
-        teacherData.map(teacher => {
-          
-          if(teacher.email === email && teacher.passwordPush === password){
-              history.push('/teacherpage/'+teacher.id);
-            
-
+        teacherData.map((teacher) => {
+          if (teacher.email === email && teacher.passwordPush === password) {
+            history.push("/teacherpage/teacher/");
           }
-          
         });
 
-        studentData.map(student => {
-          if(student.email === email && student.passwordPush === password){
-              history.push('/student/'+student.id);
+        studentData.map((student) => {
+          if (student.email === email && student.passwordPush === password) {
+            history.push("/student/myclass/");
           }
         });
       }
-       
     }
-
   };
   return (
     <Container component="main" maxWidth="xs">
@@ -104,10 +98,9 @@ export default function Login({ props }) {
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleSubmit}>
           <TextField
-            onChange={e => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             variant="outlined"
             margin="normal"
-            required
             fullWidth
             id="email"
             label="Email Address"
@@ -115,10 +108,11 @@ export default function Login({ props }) {
             autoComplete="email"
             autoFocus
             color="secondary"
-        
+            error={emailError}
+            required
           />
           <TextField
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             variant="outlined"
             margin="normal"
             required
@@ -129,6 +123,7 @@ export default function Login({ props }) {
             id="password"
             autoComplete="current-password"
             color="secondary"
+            error={passWordError}
           />
 
           <FormControlLabel
@@ -152,7 +147,7 @@ export default function Login({ props }) {
               </Link>
             </Grid>
             <Grid item>
-              <Link to="/register" variant="body2" color="secondary" >
+              <Link to="/register" variant="body2" color="secondary">
                 {"Don't have an account? Register here"}
               </Link>
             </Grid>

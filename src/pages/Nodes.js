@@ -3,13 +3,14 @@ import Container from "@material-ui/core/Container";
 import Masonry from "react-masonry-css";
 import TeacherNodeClass from "../components/Teacher/TeacherNodeClass";
 import { useHistory } from "react-router-dom";
+import { useParams } from "react-router";
 export default function Nodes() {
   const [nodes, setNodes] = useState([]);
   const history = useHistory();
   useEffect(() => {
-    fetch(" http://localhost:8000/classes")
+    fetch("http://localhost:8000/classes")
       .then((res) => res.json())
-      .then((data) => setNodes(data));
+      .then((data) => setNodes(data))
   }, []);
 
   const breakpoints = {
@@ -25,7 +26,9 @@ export default function Nodes() {
         columnClassName="my-masonry-grid_column"
       >
         {nodes.map((node) => (
-          <div key={node.id} onClick={() => history.push("/class-doc/"+node.id)}>
+          <div
+            key={node.id}
+          >
             <TeacherNodeClass node={node} setNodes={setNodes} />
           </div>
         ))}

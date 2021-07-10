@@ -87,7 +87,7 @@ export default function StudentLayout({ children }) {
           <Avatar className={classes.avatar} src="/mario-av.png" />
           {/* <Button><ExitToAppIcon/></Button> */}
           <Avatar style={{ margin: "10px" }}>
-            <Button>
+            <Button onClick={() => history.push("/")}>
               <ExitToAppIcon />
             </Button>
           </Avatar>

@@ -21,7 +21,7 @@ export default function DeleteDialog({ open, setOpen, nodeObj, setNodes }) {
     fetch("http://localhost:8000/classes/" + nodeObj.id, {
       method: "DELETE",
     }).then(() => {
-      fetch(" http://localhost:8000/classes")
+      fetch("http://localhost:8000/classes")
         .then((res) => res.json())
         .then((data) => setNodes(data));
       setOpen(false);

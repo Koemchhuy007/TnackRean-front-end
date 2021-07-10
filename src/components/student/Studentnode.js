@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import Container from "@material-ui/core/Container";
 import Masonry from "react-masonry-css";
 import NodeClass from "./NodeClass";
-
+import { useParams } from "react-router";
 export default function Studentnode() {
   const [nodes, setNodes] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
     fetch(" http://localhost:8000/classes")

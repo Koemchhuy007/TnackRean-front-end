@@ -90,11 +90,6 @@ export default function Register({ props }) {
         email,
         passwordPush,
         role,
-        classes: [
-          {
-            students: [],
-          },
-        ],
       };
       let objpushStudent = {
         name,

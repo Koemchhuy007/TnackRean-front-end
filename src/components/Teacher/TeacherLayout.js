@@ -13,7 +13,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import { format } from "date-fns";
 import Avatar from "@material-ui/core/Avatar";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => {
@@ -87,7 +86,7 @@ export default function Layout({ children }) {
           <Avatar className={classes.avatar} src="/mario-av.png" />
           {/* <Button><ExitToAppIcon/></Button> */}
           <Avatar style={{ margin: "10px" }}>
-            <Button>
+            <Button onClick={()=> history.push("/")}>
               <ExitToAppIcon />
             </Button>
           </Avatar>

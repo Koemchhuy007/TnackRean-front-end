@@ -44,8 +44,7 @@ function App() {
             <Register/>
           </Route>
         </Switch>
-
-        <Route path="/teacherpage/:id">
+        <Route path="/teacherpage">
           <Layout>
             <Switch>
               <Route path="/teacherpage/teacher">
@@ -57,8 +56,7 @@ function App() {
             </Switch>
           </Layout>
         </Route>
-
-        <Route path="/student/:id">
+        <Route path="/student/">
           <StudentLayout>
             <Switch>
               <Route path="/student/myclass">
@@ -72,7 +70,7 @@ function App() {
           </StudentLayout>
         </Route>
 
-        <Route path="/class-doc/:id">
+        <Route path="/class-doc/">
           <InclassLayout>
             <Switch>
               <Route path="/class-doc/deletefolderdialog">

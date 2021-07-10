@@ -87,7 +87,7 @@ const handleSubmit = (e) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ classname,subject,duration,teacherInform})
     }).then(()=>{
-      fetch(' http://localhost:8000/classes')
+      fetch('http://localhost:8000/classes')
       .then(res => res.json())
       .then(data => setNodes(data))
       setOpen(false);

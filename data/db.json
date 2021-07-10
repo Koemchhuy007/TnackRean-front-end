@@ -1,138 +1,12 @@
 {
   "teacher": [
     {
-      "id": 1,
-      "name": "koemchhuy",
-      "sex": "Male",
-      "email": "koemchhuy@gmail.com",
-      "password": "1234",
-      "role": "teacher",
-      "classes": [
-        {
-          "id": 1,
-          "class-code": "e0c758-27f8-b318-dd03-84eebf7b5e4",
-          "className": "javaPrograming",
-          "Subject": "Java",
-          "duration": "1week/time",
-          "room": 5,
-          "students": [
-            {
-              "id": 1,
-              "name": "nang",
-              "sex": "Male",
-              "email": "nang@gmail.com",
-              "password": "e0c758-27f8-b318-dd03-84eebf7b5e4",
-              "role": "student"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "koemchhuy",
-      "sex": "Male",
-      "email": "koemchhuy@gmail.com",
-      "password": "1234",
-      "role": "teacher",
-      "classes": [
-        {
-          "id": 1,
-          "class-code": "e0c758-27f8-b318-dd03-84eebf7b5e4",
-          "className": "javaPrograming",
-          "Subject": "Java",
-          "duration": "1week/time",
-          "room": 5,
-          "students": [
-            {
-              "id": 1,
-              "name": "nang",
-              "sex": "Male",
-              "email": "nang@gmail.com",
-              "password": "e0c758-27f8-b318-dd03-84eebf7b5e4",
-              "role": "student"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "koemchhuy",
-      "sex": "Male",
-      "email": "koemchhuy@gmail.com",
-      "password": "1234",
-      "role": "teacher",
-      "classes": [
-        {
-          "students": []
-        }
-      ]
-    },
-    {
-      "name": "we",
-      "sex": "Female",
-      "email": "saga@gmail.com",
-      "passwordPush": "123",
-      "role": "Student",
-      "classes": [
-        {
-          "students": []
-        }
-      ],
-      "id": 4
-    },
-    {
-      "name": "we",
-      "sex": "Female",
-      "email": "saga@gmail.com",
-      "passwordPush": "123",
-      "role": "Student",
-      "classes": [
-        {
-          "students": []
-        }
-      ],
-      "id": 5
-    },
-    {
-      "name": "223",
-      "sex": "Female",
-      "email": "ngannkeomchhuy99@gmail.com",
-      "passwordPush": "123",
-      "role": "Student",
-      "classes": [
-        {
-          "students": []
-        }
-      ],
-      "id": 6
-    },
-    {
-      "name": "we",
-      "sex": "Female",
-      "email": "ngannkeomchhuy999@gmail.com",
-      "passwordPush": "123",
-      "role": "Student",
-      "classes": [
-        {
-          "students": []
-        }
-      ],
-      "id": 7
-    },
-    {
       "name": "koemchhuy",
       "sex": "Female",
       "email": "koemchhuy168@gmail.com",
-      "passwordPush": "12345678",
+      "passwordPush": "02102000",
       "role": "Teacher",
-      "classes": [
-        {
-          "students": []
-        }
-      ],
-      "id": 8
+      "id": 9
     }
   ],
   "students": [
@@ -159,6 +33,22 @@
       "passwordPush": "12345678",
       "role": "Student",
       "id": 3
+    }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "classname": "Java-class",
+      "subject": "Advance java ",
+      "duration": "3houre/week",
+      "teacherInform": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    },
+    {
+      "classname": "Math class",
+      "subject": "Math",
+      "duration": "2houre/week",
+      "teacherInform": "Zoom Link: https://www.lipsum.com/\nInformation: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n",
+      "id": 2
     }
   ]
 }
