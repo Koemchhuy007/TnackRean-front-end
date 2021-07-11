@@ -4,16 +4,12 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import DeleteOutlined from "@material-ui/icons/DeleteOutlined";
 import { makeStyles } from "@material-ui/core";
 import Avatar from "@material-ui/core/Avatar";
 import { yellow, green, pink, blue } from "@material-ui/core/colors";
-import EditIcon from "@material-ui/icons/Edit";
 import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import EditDialog from "../Teacher/EditDialog";
-import DeleteDialog from "../Teacher/DeleteDialog";
+import { useHistory } from "react-router";
+
 var randomArrayColor = [yellow[700], green[500], pink[500], blue[500]];
 const random_color = (items) => {
   return items[Math.floor(Math.random() * items.length)];
@@ -26,12 +22,9 @@ const useStyles = makeStyles({
     },
   },
 });
-const options = [
-  { id: 1, text: "Edit", icon: <EditIcon /> },
-  { id: 1, text: "Delete", icon: <DeleteOutlined /> },
-];
 const ITEM_HEIGHT = 48;
 export default function NodeClass({ node, setNodes }) {
+  const history = useHistory()
   const classes = useStyles(node);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -40,7 +33,6 @@ export default function NodeClass({ node, setNodes }) {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -64,7 +56,7 @@ export default function NodeClass({ node, setNodes }) {
           title={node.classname}
           subheader={`${node.subject} | ${node.duration}`}
         />
-        <CardContent>
+        <CardContent onClick={() => history.push("/class-doc/folder/"+ node.id)}>
           <Typography variant="body2" color="textSecondary">
             {node.teacherInform}
           </Typography>
