@@ -63,17 +63,17 @@ export default function StudentLayout({ children }) {
     {
       text: "Folder",
       icon: <CreateNewFolderIcon color="secondary" />,
-      path: "",
+      path: "/class-doc/folder",
     },
     {
       text: "Classwork",
       icon: <HomeWorkIcon color="secondary" />,
-      path: "",
+      path: "/class-doc/class-work",
     },
     {
       text: "Student List",
       icon: <GroupAddIcon color="secondary" />,
-      path: "",
+      path: "/class-doc/student-list",
     },
   ];
   

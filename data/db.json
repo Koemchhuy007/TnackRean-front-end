@@ -50,5 +50,85 @@
       "teacherInform": "Zoom Link: https://www.lipsum.com/\nInformation: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n",
       "id": 2
     }
+  ],
+  "classwork": [
+    {
+      "workTitle": "Lab 6",
+      "dateLine": "2021-07-14",
+      "docLink": "http://asdfadsf",
+      "discription": "Nothing to say",
+      "id": 1,
+      "answer": "adasd"
+    },
+    {
+      "workTitle": "Lab 6",
+      "dateLine": "2021-07-14",
+      "docLink": "http://asdfadsf",
+      "discription": "Nothing to say",
+      "id": 2
+    },
+    {
+      "workTitle": "Lab 6",
+      "dateLine": "2021-07-14",
+      "docLink": "http://asdfadsf",
+      "discription": "Nothing to say",
+      "id": 3
+    },
+    {
+      "workTitle": "Lab 6",
+      "dateLine": "2021-07-14",
+      "docLink": "http://asdfadsf",
+      "discription": "Nothing to say",
+      "id": 4
+    },
+    {
+      "workTitle": "Lab 6",
+      "dateLine": "2021-07-14",
+      "docLink": "http://asdfadsf",
+      "discription": "Nothing to say",
+      "id": 5
+    },
+    {
+      "workTitle": "dd",
+      "dateLine": "2021-07-12",
+      "docLink": "sdf",
+      "discription": "asdf",
+      "id": 6
+    },
+    {
+      "workTitle": "dd",
+      "dateLine": "2021-07-12",
+      "docLink": "sdf",
+      "discription": "asdf",
+      "id": 7
+    },
+    {
+      "workTitle": "dd",
+      "dateLine": "2021-07-12",
+      "docLink": "sdf",
+      "discription": "asdf",
+      "id": 8
+    },
+    {
+      "workTitle": "d",
+      "dateLine": "2021-07-14",
+      "docLink": "asd",
+      "discription": "sd",
+      "id": 9
+    },
+    {
+      "workTitle": "d",
+      "dateLine": "2021-07-14",
+      "docLink": "asd",
+      "discription": "sd",
+      "id": 10
+    },
+    {
+      "workTitle": "HomeWork6",
+      "dateLine": "2021-07-24",
+      "docLink": "ewrq",
+      "discription": "qwer",
+      "id": 11
+    }
   ]
 }

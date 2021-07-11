@@ -82,7 +82,7 @@ export default function TeacherNodeClass({ node, setNodes }) {
           title={node.classname}
           subheader={`${node.subject} | ${node.duration}`}
         />
-        <CardContent onClick={() => history.push("/class-doc/" + node.id)}>
+        <CardContent onClick={() => history.push("/class-doc/folder/"+ node.id)}>
           <Typography variant="body2" color="textSecondary">
             {node.teacherInform}
           </Typography>
