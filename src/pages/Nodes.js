@@ -10,7 +10,7 @@ export default function Nodes() {
   useEffect(() => {
     fetch("http://localhost:8000/classes")
       .then((res) => res.json())
-      .then((data) => setNodes(data))
+      .then((data) => setNodes(data));
   }, []);
 
   const breakpoints = {
@@ -26,9 +26,7 @@ export default function Nodes() {
         columnClassName="my-masonry-grid_column"
       >
         {nodes.map((node) => (
-          <div
-            key={node.id}
-          >
+          <div key={node.id}>
             <TeacherNodeClass node={node} setNodes={setNodes} />
           </div>
         ))}

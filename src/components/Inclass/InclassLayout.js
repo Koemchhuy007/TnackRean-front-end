@@ -63,7 +63,7 @@ export default function StudentLayout({ children }) {
     {
       text: "Folder",
       icon: <CreateNewFolderIcon color="secondary" />,
-      path: "",
+      path: "/class-doc/folder",
     },
     {
       text: "Classwork",
@@ -76,7 +76,7 @@ export default function StudentLayout({ children }) {
       path: "",
     },
   ];
-  
+
   return (
     <div className={classes.root}>
       {/* app bar */}
